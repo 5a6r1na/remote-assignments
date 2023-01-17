@@ -2,10 +2,10 @@ function avg(data) {
   let productPrices=0;
   let array=[];
   for (let i=0; i < data.products.length; i++) {
-    productPrices = data.products[i].price/data.size;
-    array.push(productPrices); 
+    productPrices += data.products[i].price/data.size;
+ 
   }
-   return array;
+   return productPrices;
 } 
 
 console.log(
