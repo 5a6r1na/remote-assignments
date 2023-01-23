@@ -1,0 +1,10 @@
+doctype html
+html(lang="en")
+    head
+        title trackName
+    body
+        h1 Hi, we would like to track your name! 
+        form(action= "http://localhost:3000/trackName", method= "get")
+            label Please enter your name: 
+                input(type= "text", name= "name", value="" )
+            button(type="submit") Submit 
