@@ -4,28 +4,32 @@
   <title>SUM</title>
   <script> 
       function loadData() {
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("jsontext").innerHTML =
-          this.responseText;
-        }
-      };
-      xhttp.open("GET", "http://localhost:3000/data?number=10");
-      xhttp.send();
-      document.getElementById("jsonbtn").style.display = "none";
-    } 
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("jsontext").innerHTML = 
+            this.responseText;
+            }
+          };
+        xhttp.open("GET", "http://localhost:3000/data?number=10");
+        xhttp.send();
+        document.getElementById("jsonbtn").style.display = "none";
+      } 
   
       function countSum() {
         let countNumber = document.getElementById("input").value;
-        let sum =0;
-        for (let i = 1; i <= countNumber ;i++) {
-          sum += i;
-        } 
-        document.getElementById("result").innerHTML = sum;
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("result").innerHTML =
+            this.responseText;
+            }
+          };
+        xhr.open("GET", "http://localhost:3000/data?number=" + countNumber);
+        xhr.send();
         document.getElementById("input").style.display = "none";
         document.getElementById("countbtn").style.display = "none";
-    }
+      }
   
   </script>
 </head>
@@ -39,9 +43,11 @@
         <p id="jsontext"></p>
     </div>
     <div>
-        <p>Input your number for the SUM result</p>
-        <input id="input" type="text" value="" >
-        <button id="countbtn" type="button" onclick="countSum()"> click for answer</button>
+        <form>
+          <label for="input">Input your number for the SUM result</label>
+          <input id="input" type="text">
+          <button id="countbtn" type="button" onclick="countSum()"> click for answer</button>
+        </form>
         <p id="result"></p>
     </div>
 </body>
