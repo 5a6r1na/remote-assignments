@@ -1,0 +1,91 @@
+* {
+    font-family:'Times New Roman', Times, serif;
+}
+
+body {
+    text-align: center;
+    background-color: #c4dfe1;
+}
+
+/* Post article */
+.article {
+    background-color: #f1eedf;
+    width: 600px;
+    margin: auto;
+    color: #61686f;
+    border-radius: 20px;
+  }
+
+.welcome_msg {
+    font-size: 1.5em;
+    padding-top: 5%;
+  }
+
+.article_header {
+    padding-top: 5%;
+    font-size: 1.5em;
+    margin-bottom: 1%;
+}
+ 
+.article_form {
+    padding-top: 15px;
+  }
+
+.title_input {
+    margin: 5px 10px 10px 10px;
+}
+
+.content_input {
+    margin-top:5px;
+    margin-bottom: 20px;
+}
+
+.article_btn {
+    margin-bottom: 3%;
+}
+
+/* Signup Signin */
+.sign {
+    width: 300px;
+    margin: auto;
+    color: #61686f;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.signup_box, .signin_box {
+    background-color: #f1eedf;
+    width: 300px;
+    height: 175px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    margin-top: 10%;
+}
+
+.signup_error, .signin_error {
+    font-size: 1.5em;
+    padding-top: 5%;
+}
+
+.signup_header, .signin_header {
+    font-size: 1.5em;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+.email_input {
+    margin: 5px 10px;
+}
+.password_input {
+    margin: 5px 10px 15px 10px;
+}
+
+/* Logout */
+
+h2 {
+    margin-top: 10%;
+}

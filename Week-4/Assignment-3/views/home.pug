@@ -1,0 +1,53 @@
+extends layout
+
+block main 
+    if status === "incorrect"
+        p.signin_error The login info is wrong, please try again:
+        section.sign
+            div.signin_box
+                p.signin_header Sign in
+                form(action='/signin', method='post')
+                    label Email:
+                    input.email_input(type='text', name='email', required='')
+                    br
+                    label Password:
+                    input.password_input(type='password', name='password', required='')
+                    br
+                    button(type='submit') Sign in
+
+    else if status === "exsisting"
+        p.signup_error This email has been registered, please try another:
+        section.sign
+            div.signup_box
+                p.signup_header Sign up
+                form(action='/signup', method='post')
+                    label Email:
+                    input.email_input(type='text', name='email', required='')
+                    br
+                    label Password:
+                    input.password_input(type='password', name='password', required='')
+                    br
+                    button(type='submit') Sign up
+        
+    else
+        section.sign
+            div.signup_box
+                p.signup_header Sign up
+                form(action='/signup', method='post')
+                    label Email:
+                    input.email_input(type='text', name='email', required='')
+                    br
+                    label Password:
+                    input.password_input(type='password', name='password', required='')
+                    br
+                    button(type='submit') Sign up
+            div.signin_box
+                p.signin_header Sign in
+                form(action='/signin', method='post')
+                    label Email:
+                    input.email_input(type='text', name='email', required='')
+                    br
+                    label Password:
+                    input.password_input(type='password', name='password', required='')
+                    br
+                    button(type='submit') Sign in

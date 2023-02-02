@@ -1,0 +1,15 @@
+extends layout
+
+block main
+    p.welcome_msg Hi #{logEmail}, welcome to the book club!
+    section.article 
+      p.article_header Article
+      form.article_form(action='/article', method='post')
+        label.article_title Title:
+        input.title_input(type='text', name='title', required='')
+        br
+        label.article_content Content:
+        br
+        textarea.content_input(name='content', cols='60', rows='10', required='')
+        br
+        button.article_btn(type='submit') Post article
