@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Product List</title>
-  <script> 
-    function ajax(src, callback) {
-        const xhr = new XMLHttpRequest();
-        xhr.open("GET", src);
-        xhr.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                callback(JSON.parse(this.responseText));
+    <title>Product List</title>
+    <script>
+        function ajax(src, callback) {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", src);
+            xhr.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    callback(JSON.parse(this.responseText));
                 }
             };
-        xhr.send();
-    }
+            xhr.send();
+        }
 
-    function render(response) {
-        response.forEach((value, index)=>{
-            const div = document.createElement("div");
-            div.innerHTML = `
+        function render(response) {
+            response.forEach((value, index) => {
+                const div = document.createElement("div");
+                div.innerHTML = `
             <ul>
                 <strong>${value.name}</strong>
                 <li>Price: $${value.price}</li>
                 <li>${value.description}</li>
             </ul>`;
-            document.getElementById("product-text").appendChild(div); 
-        });
-    }
-    
+                document.getElementById("product-text").appendChild(div);
+            });
+        }
 
-    ajax(
-        'https://appworks-school.github.io/Remote-Assignment-Data/products',
-        function (response) {
-        render(response);
-    }
-    ); 
-  </script>
+        ajax(
+            "https://appworks-school.github.io/Remote-Assignment-Data/products",
+            function (response) {
+                render(response);
+            }
+        );
+    </script>
 </head>
 
 <body>
     <div class="heading">
-         <h1>Product List</h1>
+        <h1>Product List</h1>
     </div>
     <div>
         <h2>We have the following products in stalk:</h2>
         <div id="product-text"></div>
     </div>
-
 </body>
+
 </html>
